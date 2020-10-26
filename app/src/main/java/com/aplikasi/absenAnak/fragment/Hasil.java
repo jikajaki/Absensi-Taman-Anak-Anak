@@ -24,12 +24,12 @@ import java.util.List;
  */
 public class Hasil extends Fragment {
 
-    public static final String MHS_REQUEST_KEY = "mahasiswa";
-    public static final String DS_REQUEST_KEY = "dosen";
+    public static final String MHS_REQUEST_KEY = "anak";
+    public static final String DS_REQUEST_KEY = "guru";
     public static final String JUMLAH_KEY = "jumlah";
 
-    private List<Waktu> mahasiswaWaktuList;
-    private List<Waktu> dosenWaktuList;
+    private List<Waktu> anakWaktuList;
+    private List<Waktu> guruWaktuList;
 
     public Hasil() {
         // Required empty public constructor
@@ -38,8 +38,8 @@ public class Hasil extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.mahasiswaWaktuList = new ArrayList<>();
-        this.dosenWaktuList = new ArrayList<>();
+        this.anakWaktuList = new ArrayList<>();
+        this.guruWaktuList = new ArrayList<>();
     }
 
     @Override
@@ -48,13 +48,13 @@ public class Hasil extends Fragment {
         FragmentHasilBinding binding = DataBindingUtil
                 .inflate(inflater, R.layout.fragment_hasil, container, false);
         binding.setFragment(this);
-        binding.setMahasiswaWaktuList(mahasiswaWaktuList);
-        binding.setDosenWaktuList(dosenWaktuList);
+        binding.setMahasiswaWaktuList(anakWaktuList);
+        binding.setDosenWaktuList(guruWaktuList);
         getParentFragmentManager().setFragmentResultListener(MHS_REQUEST_KEY, this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 Waktu waktu = result.getParcelable(JUMLAH_KEY);
-                mahasiswaWaktuList.add(waktu);
+                anakWaktuList.add(waktu);
             }
         });
 
@@ -62,7 +62,7 @@ public class Hasil extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 Waktu waktu = result.getParcelable(JUMLAH_KEY);
-                dosenWaktuList.add(waktu);
+                guruWaktuList.add(waktu);
             }
         });
 
@@ -71,7 +71,7 @@ public class Hasil extends Fragment {
 
     public String anak(){
         StringBuilder builder = new StringBuilder();
-        for (Waktu waktu : mahasiswaWaktuList){
+        for (Waktu waktu : anakWaktuList){
             builder.append("nama : ")
                     .append(waktu.getName())
                     .append("\r")
@@ -87,7 +87,7 @@ public class Hasil extends Fragment {
 
     public String guru(){
         StringBuilder builder = new StringBuilder();
-        for (Waktu waktu : dosenWaktuList){
+        for (Waktu waktu : guruWaktuList){
             builder.append("nama : ")
                     .append(waktu.getName())
                     .append("\r")

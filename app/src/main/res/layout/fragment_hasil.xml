@@ -6,10 +6,10 @@
     >
     <data>
         <variable
-            name="mahasiswaWaktuList"
+            name="anakWaktuList"
             type="java.util.List" />
         <variable
-            name="dosenWaktuList"
+            name="guruWaktuList"
             type="java.util.List" />
         <variable
             name="fragment"
@@ -30,7 +30,8 @@
             android:text="Kehadiran Anak"
             android:textSize="36sp"
             tools:layout_editor_absoluteX="80dp"
-            tools:layout_editor_absoluteY="16dp" />
+            tools:layout_editor_absoluteY="16dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView2"
@@ -39,7 +40,8 @@
             android:text="Kehadiran Guru"
             android:textSize="36sp"
             tools:layout_editor_absoluteX="70dp"
-            tools:layout_editor_absoluteY="382dp" />
+            tools:layout_editor_absoluteY="382dp"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/button_add_anak"
@@ -48,7 +50,8 @@
             android:onClick="@{(v) -> fragment.onAddHomeClick(v)}"
             android:text="Absensi Anak"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="302dp" />
+            tools:layout_editor_absoluteY="302dp"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/button_add_guru"
@@ -57,7 +60,8 @@
             android:onClick="@{(v) -> fragment.onAddAwayClick(v)}"
             android:text="Absen Guru"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="667dp" />
+            tools:layout_editor_absoluteY="667dp"
+            tools:ignore="MissingConstraints" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -92,35 +96,39 @@
             android:id="@+id/text_home_mhs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(mahasiswaWaktuList.size())}"
+            android:text="@{String.valueOf(anakWaktuList.size())}"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="261dp"
-            tools:layout_editor_absoluteY="110dp" />
+            tools:layout_editor_absoluteY="110dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/text_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(dosenWaktuList.size())}"
+            android:text="@{String.valueOf(guruWaktuList.size())}"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="230dp"
-            tools:layout_editor_absoluteY="452dp" />
+            tools:layout_editor_absoluteY="452dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/text_home_scorerr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{fragment.mahasiswa()}"
+            android:text="@{fragment.anak()}"
             tools:layout_editor_absoluteX="206dp"
-            tools:layout_editor_absoluteY="274dp" />
+            tools:layout_editor_absoluteY="274dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/text_away_scorer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{fragment.dosen()}"
+            android:text="@{fragment.guru()}"
             tools:layout_editor_absoluteX="206dp"
-            tools:layout_editor_absoluteY="640dp" />
+            tools:layout_editor_absoluteY="640dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView3"
@@ -129,7 +137,8 @@
             android:text="Anak Hadir"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="124dp" />
+            tools:layout_editor_absoluteY="124dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView4"
@@ -138,6 +147,7 @@
             android:text="Guru Hadir"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="145dp"
-            tools:layout_editor_absoluteY="510dp" />
+            tools:layout_editor_absoluteY="510dp"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

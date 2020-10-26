@@ -5,25 +5,25 @@ import android.os.Parcelable;
 
 public class Waktu implements Parcelable {
 
-    private String name;
+    private String nama;
     private String hari;
-    private String status;
+    private String keterangan;
 
     public Waktu() {
     }
 
-    public Waktu(String name, String hari, String status) {
-        this.name = name;
+    public Waktu(String nama, String hari, String keterangan) {
+        this.nama = nama;
         this.hari = hari;
-        this.status = status;
+        this.keterangan = keterangan;
     }
 
     public String getName() {
-        return name;
+        return nama;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nama = nama;
     }
 
     public String getHari() {
@@ -35,11 +35,10 @@ public class Waktu implements Parcelable {
     }
 
     public String getStatus() {
-        return status;
+        return keterangan;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(String status) { this.keterangan = keterangan;
     }
 
     @Override
@@ -49,15 +48,15 @@ public class Waktu implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.name);
+        dest.writeString(this.nama);
         dest.writeString(this.hari);
-        dest.writeString(this.status);
+        dest.writeString(this.keterangan);
     }
 
     protected Waktu(Parcel in) {
-        this.name = in.readString();
+        this.nama = in.readString();
         this.hari = in.readString();
-        this.status = in.readString();
+        this.keterangan = in.readString();
     }
 
     public static final Creator<Waktu> CREATOR = new Creator<Waktu>() {
@@ -75,9 +74,9 @@ public class Waktu implements Parcelable {
     @Override
     public String toString() {
         return "GoalScorer{" +
-                "name='" + name + '\'' +
+                "nama='" + nama + '\'' +
                 ", hari=" + hari + + '\'' +
-                ", status=" + status +
+                ", keterangan=" + keterangan +
                 '}';
     }
 }

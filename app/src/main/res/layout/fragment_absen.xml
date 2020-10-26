@@ -69,7 +69,7 @@
             android:layout_marginTop="124dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={waktu.name}"
+            android:text="@={waktu.nama}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
