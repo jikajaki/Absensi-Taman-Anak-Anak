@@ -17,12 +17,12 @@ import com.aplikasi.absenAnak.models.Waktu;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Absen extends Fragment {
+public class AbsenKehadiran extends Fragment {
 
     private String requestKey;
     private Waktu waktu;
 
-    public Absen() {
+    public AbsenKehadiran() {
         // Required empty public constructor
     }
 
@@ -38,13 +38,16 @@ public class Absen extends Fragment {
         FragmentAbsenBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_absen, container, false);
         binding.setFragment(this);
         binding.setWaktu(waktu);
-        requestKey = AbsenArgs.fromBundle(getArguments()).getRequestKey();
+        requestKey = AbsenKehadiranArgs.fromBundle(getArguments()).getRequestKey();
         return binding.getRoot();
+    }
+
+    private String getRequestKey() {
     }
 
     public void onSaveClicked(View view) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable(Hasil.JUMLAH_KEY, waktu);
+        bundle.putParcelable(HasilKehadiran.JUMLAH_KEY, waktu);
         getParentFragmentManager().setFragmentResult(requestKey, bundle);
         Navigation.findNavController(view).navigateUp();
     }

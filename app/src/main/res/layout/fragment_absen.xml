@@ -8,7 +8,7 @@
     <data>
         <variable
             name="fragment"
-            type="com.aplikasi.absenAnak.fragment.Absen" />
+            type="com.aplikasi.absenAnak.fragment.AbsenKehadiran" />
         <variable
             name="waktu"
             type="com.aplikasi.absenAnak.models.Waktu" />
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        tools:context=".fragment.Absen">
+        tools:context=".fragment.AbsenKehadiran">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -69,7 +69,7 @@
             android:layout_marginTop="124dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={waktu.nama}"
+            android:text="@={waktu.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -106,7 +106,7 @@
             android:layout_marginTop="44dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={waktu.status}"
+            android:text="@={waktu.keterangan}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"

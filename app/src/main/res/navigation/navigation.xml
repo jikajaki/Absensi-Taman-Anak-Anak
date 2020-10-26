@@ -6,7 +6,7 @@
     app:startDestination="@id/hasil">
     <fragment
         android:id="@+id/hasil"
-        android:name="com.aplikasi.absenAnak.fragment.Hasil"
+        android:name="com.aplikasi.absenAnak.fragment.HasilKehadiran"
         android:label="fragment_hasil"
         tools:layout="@layout/fragment_hasil" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/absen"
-        android:name="com.aplikasi.absenAnak.fragment.Absen"
+        android:name="com.aplikasi.absenAnak.fragment.AbsenKehadiran"
         android:label="fragment_absen"
         tools:layout="@layout/fragment_absen" >
         <action

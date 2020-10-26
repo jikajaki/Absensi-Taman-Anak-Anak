@@ -13,7 +13,7 @@
             type="java.util.List" />
         <variable
             name="fragment"
-            type="com.aplikasi.absenAnak.fragment.Hasil" />
+            type="com.aplikasi.absenAnak.fragment.HasilKehadiran" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        tools:context=".fragment.Hasil">
+        tools:context=".fragment.HasilKehadiran">
 
         <TextView
             android:id="@+id/textView"

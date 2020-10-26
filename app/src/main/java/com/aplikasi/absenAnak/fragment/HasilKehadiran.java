@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Hasil extends Fragment {
+public class HasilKehadiran extends Fragment {
 
     public static final String MHS_REQUEST_KEY = "anak";
     public static final String DS_REQUEST_KEY = "guru";
@@ -31,7 +31,7 @@ public class Hasil extends Fragment {
     private List<Waktu> anakWaktuList;
     private List<Waktu> guruWaktuList;
 
-    public Hasil() {
+    public HasilKehadiran() {
         // Required empty public constructor
     }
 
@@ -48,8 +48,8 @@ public class Hasil extends Fragment {
         FragmentHasilBinding binding = DataBindingUtil
                 .inflate(inflater, R.layout.fragment_hasil, container, false);
         binding.setFragment(this);
-        binding.setMahasiswaWaktuList(anakWaktuList);
-        binding.setDosenWaktuList(guruWaktuList);
+        binding.setAnakWaktuList(anakWaktuList);
+        binding.setGuruWaktuList(guruWaktuList);
         getParentFragmentManager().setFragmentResultListener(MHS_REQUEST_KEY, this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
@@ -102,12 +102,13 @@ public class Hasil extends Fragment {
     }
 
     public void onAddHomeClick(View view) {
-        HasilDirections.ActionHasilToAbsen action = HasilDirections.actionHasilToAbsen(MHS_REQUEST_KEY);
+        HasilDirections action;
+        action = HasilDirections.actionHasilToAbsen(MHS_REQUEST_KEY);
         Navigation.findNavController(view).navigate(action);
     }
 
     public void onAddAwayClick(View view) {
-        HasilDirections.ActionHasilToAbsen action = HasilDirections.actionHasilToAbsen(DS_REQUEST_KEY);
+        HasilDirections action = HasilDirections.actionHasilToAbsen(DS_REQUEST_KEY);
         Navigation.findNavController(view).navigate(action);
     }
 }
