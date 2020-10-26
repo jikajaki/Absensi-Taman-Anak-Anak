@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="mahasiswaWaktuList"
+            type="java.util.List" />
+        <variable
+            name="dosenWaktuList"
+            type="java.util.List" />
+        <variable
+            name="fragment"
+            type="com.aplikasi.absenAnak.fragment.Hasil" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:context=".fragment.Hasil">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kehadiran Anak"
+            android:textSize="36sp"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kehadiran Guru"
+            android:textSize="36sp"
+            tools:layout_editor_absoluteX="70dp"
+            tools:layout_editor_absoluteY="382dp" />
+
+        <Button
+            android:id="@+id/button_add_anak"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> fragment.onAddHomeClick(v)}"
+            android:text="Absensi Anak"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="302dp" />
+
+        <Button
+            android:id="@+id/button_add_guru"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> fragment.onAddAwayClick(v)}"
+            android:text="Absen Guru"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="667dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!--TextView
+            android:id="@+id/text_home_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="64sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.501" />
+
+        <TextView
+            android:id="@+id/text_away_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="64sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" /-->
+
+        <TextView
+            android:id="@+id/text_home_mhs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(mahasiswaWaktuList.size())}"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="261dp"
+            tools:layout_editor_absoluteY="110dp" />
+
+        <TextView
+            android:id="@+id/text_ds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(dosenWaktuList.size())}"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="230dp"
+            tools:layout_editor_absoluteY="452dp" />
+
+        <TextView
+            android:id="@+id/text_home_scorerr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{fragment.mahasiswa()}"
+            tools:layout_editor_absoluteX="206dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <TextView
+            android:id="@+id/text_away_scorer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{fragment.dosen()}"
+            tools:layout_editor_absoluteX="206dp"
+            tools:layout_editor_absoluteY="640dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anak Hadir"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="156dp"
+            tools:layout_editor_absoluteY="124dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guru Hadir"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="510dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

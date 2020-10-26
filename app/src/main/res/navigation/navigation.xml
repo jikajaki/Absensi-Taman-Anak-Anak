@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/hasil">
+    <fragment
+        android:id="@+id/hasil"
+        android:name="com.aplikasi.absenAnak.fragment.Hasil"
+        android:label="fragment_hasil"
+        tools:layout="@layout/fragment_hasil" >
+        <action
+            android:id="@+id/action_hasil_to_absen"
+            app:destination="@id/absen" />
+    </fragment>
+    <fragment
+        android:id="@+id/absen"
+        android:name="com.aplikasi.absenAnak.fragment.Absen"
+        android:label="fragment_absen"
+        tools:layout="@layout/fragment_absen" >
+        <action
+            android:id="@+id/action_absen_to_hasil"
+            app:destination="@id/hasil" />
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+    </fragment>
+</navigation>
